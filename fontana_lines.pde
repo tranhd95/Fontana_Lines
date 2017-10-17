@@ -9,7 +9,12 @@ void draw() {
   
   beginShape();
   while (_x < width) {
-    float offset = random(-10, 10);
+    float offset = 0;
+    
+    if (_x % 5 == 0) {
+      offset = random(-10, 10);
+    }
+    
     curveVertex(_x, height/2 + offset);
     _x++;
   }
